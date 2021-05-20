@@ -16,6 +16,6 @@ Raw Traffic aims to get the most possible traffic to a website in the least amou
 6) Run the executable
 
 ## Coming Soon
- - Bot Mdia Steams
+ - Bot Media Steams
  - Command Line Intergration
  - Integrate Proxy Rotating API (When I'm less broke)
