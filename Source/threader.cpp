@@ -13,15 +13,16 @@ void threader::start() {
 	boost::asio::thread_pool pool(threads + 1);
 	boost::asio::post(pool, boost::bind(&threader::printProg, hits, pause));
 	for (int i = 0; i < hits; i++) {
-		boost::asio::post(pool, boost::bind(&threader::ping, link, listPath, hitsPerThread));
+		boost::asio::post(pool, boost::bind(&threader::ping, link, listPath, hitsPerThread, wait));
 	}
 	pool.join();
 }
 
 void threader::ping(std::string link,
 					std::string listPath,
-					int hitsPerThread) {
-	app a(link, listPath);
+					int hitsPerThread,
+					int wait) {
+	app a(link, listPath, wait);
 	a.loop(hitsPerThread);
 }
 
