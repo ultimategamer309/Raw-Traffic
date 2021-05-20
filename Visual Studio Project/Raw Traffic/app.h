@@ -35,5 +35,5 @@ private:
 	inline static boost::mutex listMutex;
 	bool useAPI;
 	boost::mutex mutex;
-	int wait
+	int wait;
 };
