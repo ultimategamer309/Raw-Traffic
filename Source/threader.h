@@ -18,7 +18,8 @@ public:
 private:
 	static void ping(std::string link,
 					std::string listPath,
-					int hitsPerThread);
+					int hitsPerThread,
+					int wait);
 	static void printProg(int hits, int pause);
 	int hitsPerThread;
 	int hits;
