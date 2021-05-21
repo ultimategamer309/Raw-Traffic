@@ -29,7 +29,7 @@ void threader::ping(std::string link,
 void threader::printProg(int hits, int pause) {
 	while (threader::counter < hits) {
 		threader::counterMutex.lock();
-		std::cout << "Progress: " << (threader::counter / hits) * 100
+		std::cout << "Progress: " << double(threader::counter / hits) * 100
 			<< "% (" << threader::counter << " / " << hits << ')' << std::endl;
 		threader::counterMutex.unlock();
 		boost::this_thread::sleep_for(boost::chrono::milliseconds(pause));
