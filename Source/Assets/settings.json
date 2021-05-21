@@ -13,5 +13,5 @@
   "proxyList_format": "example: socks5://127.0.0.1:9150",
 
   "wait": 0,
-  "wait_description": "set to 0 for the website to just load the page. set to one to stream media"
+  "wait_description": "set to 0 for the website to just load the page. Otherwise set to how long connection should be open (for streaming media)"
 }
