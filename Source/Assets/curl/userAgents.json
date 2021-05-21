@@ -1,0 +1,55 @@
+{
+  "os": {
+    "1": "win",
+    "2": "mac",
+    "3": "linux"
+  },
+  "navigator": {
+    "1": "chrome",
+    "2": "firefox"
+  },
+  "os_platform": {
+    "win": {
+      "1": "Windows NT 10.0;"
+    },
+    "mac": {
+      "1": "Macintosh; Intel Mac OS X 10.11",
+      "2": "Macintosh; Intel Mac OS X 10.12"
+    },
+    "linux": {
+      "1": "X11; Linux",
+      "2": "X11; Ubuntu; Linux"
+    }
+  },
+  "os_cpu": {
+    "win": {
+      "1": "Win64; x64",
+      "2": "WOW64"
+    },
+    "linux": {
+      "1": "i686",
+      "2": "x86_64",
+      "3": "i686 on x86_64"
+    },
+    "mac": {
+      "1": ""
+    }
+  },
+  "navigator_version": {
+    "firefox": {
+      "1": "Firefox/88.0",
+      "2": "Firefox/88.0.1",
+      "3": "Firefox/87.0"
+    },
+    "chrome": {
+      "1": "Chrome/90.0.4427.5",
+      "2": "Chrome/90.0.4427.4",
+      "3": "Chrome/92.0.4491.4",
+      "4": "Chrome/92.0.4491.6",
+      "5": "Chrome/92.0.4491.7",
+      "6": "Chrome/92.0.4512.3",
+      "7": "Chrome/92.0.4512.4",
+      "8": "Chrome/92.0.4512.6"
+    }
+  }
+}
