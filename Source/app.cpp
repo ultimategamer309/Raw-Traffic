@@ -1,5 +1,6 @@
 #include "app.h"
 #include "threader.h"
+#include "userAgent.h"
 //inits
 app::app(std::string link, std::string listPath, int wait) {
 	set(link, listPath, wait);
@@ -36,16 +37,21 @@ bool app::curl() {
 	curl_ = curl_easy_init();
 	if (curl_)
 	{
+		userAgent agent;
 		curl_easy_setopt(curl_, CURLOPT_PROXY, proxy.c_str());
 		curl_easy_setopt(curl_, CURLOPT_URL, link.c_str());
 		curl_easy_setopt(curl_, CURLOPT_SSL_VERIFYPEER, 1L);
 		curl_easy_setopt(curl_, CURLOPT_SSL_VERIFYHOST, 1L);
+		//std::string s = agent.getAgent();
+		//curl_easy_setopt(curl_, CURLOPT_USERAGENT, s.c_str());
 		curl_easy_setopt(curl_, CURLOPT_WRITEFUNCTION, write_data);
 		curl_easy_setopt(curl_, CURLOPT_VERBOSE, 0L);
 		
 		//we only want to follow location if trying to simmulate streaming
 		if (wait > 0) {
 			curl_easy_setopt(curl_, CURLOPT_FOLLOWLOCATION, true);
+			curl_easy_setopt(curl_, CURLOPT_TIMEOUT, long(wait));
+			curl_easy_setopt(curl_, CURLOPT_BUFFERSIZE, 1024 * 1024);
 		}
 
 		res = curl_easy_perform(curl_);
